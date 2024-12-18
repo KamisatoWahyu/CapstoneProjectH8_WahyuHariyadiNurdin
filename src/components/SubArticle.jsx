@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import megaphone from "../assets/megaphone.png";
+import questionMark from "../assets/purple-question-mark.jpg"
 
 const SubArticle = () => {
   const newsReducer = useSelector((state) => {
@@ -23,7 +23,7 @@ const SubArticle = () => {
                   src={
                     item.multimedia?.[0]?.url
                       ? `https://www.nytimes.com/${item.multimedia[0].url}`
-                      : megaphone
+                      : questionMark
                   }
                   alt="image"
                   className="h-28 w-full object-cover rounded"
