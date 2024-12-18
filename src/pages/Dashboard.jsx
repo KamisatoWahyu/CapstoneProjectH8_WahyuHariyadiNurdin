@@ -11,7 +11,6 @@ import MainDashboard from "../components/MainDashboard";
 // import reducer dan action
 import { fetchCountry } from "../store/actions/actionFetchAPI";
 
-let renderCount = 0;
 const Dashboard = () => {
   // Persiapan reducer
   const countryReducer = useSelector(function (state) {
@@ -22,13 +21,9 @@ const Dashboard = () => {
   // useEffect untuk mengambil 10 data terbesar melalui reducer
   useEffect(() => {
     if (countryReducer.mainCountry.length == 0) {
-      console.log("fetch api");
       dispatch(fetchCountry());
     }
   }, [dispatch, countryReducer.mainCountry]);
-
-  renderCount++;
-  console.log("Render Counter Dashboard: ", renderCount);
 
   return (
     <>

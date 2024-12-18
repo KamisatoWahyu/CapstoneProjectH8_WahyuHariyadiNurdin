@@ -11,7 +11,6 @@ import Select from "react-select";
 import { fetchCountry } from "../store/actions/actionFetchAPI";
 import { countryData } from "../store/actions/actionCountryData";
 
-let renderCount = 0;
 const CountryComparison = () => {
   const [selectedOption, setSelectedOption] = useState([]);
   const countryReducer = useSelector(function (state) {
@@ -74,15 +73,12 @@ const CountryComparison = () => {
 
   // handle ketika memilih negara
   const handleChange = (selectedOption) => {
-    console.log("perubahan handle change: ", selectedOption);
     setSelectedOption(selectedOption);
   };
 
-  renderCount++;
-  console.log("Render Counter Parent comparison: ", renderCount);
   return (
     <main
-      className="flex flex-col items-center bg-cover bg-center bg-fixed min-h-screen"
+      className="flex flex-col items-center justify-between bg-cover bg-center bg-fixed min-h-screen"
       style={{ backgroundImage: `url(${earth})` }}
     >
       {/* Header */}

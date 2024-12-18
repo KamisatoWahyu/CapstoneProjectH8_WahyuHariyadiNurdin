@@ -1,13 +1,8 @@
 import { useNavigate } from "react-router-dom";
 
 import ajaw from "../assets/noFilter.png";
-import { useSelector } from "react-redux";
 
 const ErrorPage = () => {
-  const newsReducer = useSelector((state) => {
-    return state.newsReducer;
-  });
-  console.log("error api: ", newsReducer.length)
   const navigate = useNavigate();
   return (
     <>

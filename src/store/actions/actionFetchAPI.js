@@ -35,21 +35,26 @@ export function fetchCountry() {
 }
 
 export function fetchNews() {
-  console.log("masuk fetch");
   return async function (dispatch) {
     try {
-      const response = await fetch(
-        `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=peace&api-key=${
-          import.meta.env.VITE_REACT_NEWS_API_KEY
-        }`
-      );
-      const responseJSON = await response.json();
+      const fetchNews = [];
+    
+      for (let i = 0; i < 1; i++) {
+        const response = await fetch(
+          `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=peace&page=${i}&api-key=${
+            import.meta.env.VITE_REACT_NEWS_API_KEY
+          }`
+        );
+        const responseJSON = await response.json();
+        fetchNews.push(...responseJSON.response.docs); 
+      }
+
       dispatch({
         type: NEWS_REDUCER_CASE.INSERT_ALL_NEWS,
-        mainNews: responseJSON,
+        mainNews: fetchNews,
       });
     } catch (error) {
-      return console.log("Error fetching: ", error);
+      console.log("Error fetching: ", error);
     }
   };
 }

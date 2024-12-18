@@ -9,7 +9,7 @@ const PageHeaders = ({ title, subtitle, children}) => {
   return (
     <>
       <section className="flex flex-col items-center w-full bg-gradient-to-b from-black to-transparent backdrop-blur-sm shadow text-white z-30">
-        <div className="flex gap-4 mt-4">
+        <div className="flex gap-6 mt-4">
           <NavLink
             to="/"
             className={({ isActive }) => isNavlinkActive(isActive)}

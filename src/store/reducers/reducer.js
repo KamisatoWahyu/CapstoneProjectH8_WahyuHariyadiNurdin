@@ -41,7 +41,6 @@ const countryReducer = (state = countryState, action) => {
       };
     }
     case COUNTRY_REDUCER_CASE.INSERT_COUNTRY_COMPARISON_DATA: {
-        console.log("perubahan render status false");
       return {
         ...state,
         countryComparisonData: action.countryComparisonData,

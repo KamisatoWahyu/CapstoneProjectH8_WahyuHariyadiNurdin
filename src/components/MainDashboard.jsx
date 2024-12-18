@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 
 const MainDashboard = () => {
   const [selectedOption, setSelectedOption] = useState([]);
+  const [selectedOptionData, setSelectedOptionData] = useState([]);
   const countryReducer = useSelector((state) => {
     return state.countryReducer;
   });
@@ -17,8 +18,16 @@ const MainDashboard = () => {
   }
 
   const handleChange = (selectedOption) => {
-    console.log("perubahan handle change: ", selectedOption);
     setSelectedOption(selectedOption);
+
+    if (selectedOption !== null) {
+      const selectedData = countryReducer.topPopulation.find(
+        (findItem) => findItem.cca2 === selectedOption.value
+      );
+      setSelectedOptionData([selectedData]);
+    } else {
+      setSelectedOptionData([]);
+    }
   };
 
   return (
@@ -28,6 +37,7 @@ const MainDashboard = () => {
           {countryReducer.optionValueCountry.length !== 0 && (
             <Select
               closeMenuOnSelect={false}
+              isClearable={true}
               options={countryReducer.optionValueCountry}
               value={selectedOption}
               onChange={handleChange}
@@ -37,9 +47,12 @@ const MainDashboard = () => {
           )}
           <p className="mt-4 font-bold text-white">Country population rank</p>
           <hr className="mt-4 w-3/4" />
-          <div className="w-full mt-4 grid grid-cols-3 md:grid-cols-5 gap-2 p-4 ">
+          <div className="w-full mt-4 grid grid-cols-3 md:grid-cols-5 gap-2 p-4">
             {/* Country Ranking Card */}
-            {countryReducer.topPopulation.map((item, i) => (
+            {(selectedOptionData.length !== 0
+              ? selectedOptionData
+              : countryReducer.topPopulation
+            ).map((item, i) => (
               <div
                 className="w-auto h-auto rounded-md p-2 backdrop-blur-sm bg-black/10 shadow-lg text-white"
                 key={i}

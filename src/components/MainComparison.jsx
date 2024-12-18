@@ -9,7 +9,6 @@ const MainComparison = ({ selectedComparison }) => {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-    console.log("navigate dan render status true");
     navigate(
       `compare/${selectedComparison[0].value}/n/${selectedComparison[1].value}`
     );
@@ -18,7 +17,6 @@ const MainComparison = ({ selectedComparison }) => {
       renderStatus: true,
     });
   };
-  console.log(countryReducer.countryComparisonData.length)
   return (
     <>
       <section className="mt-4 p-2 grid grid-cols-2 w-full">
@@ -40,7 +38,7 @@ const MainComparison = ({ selectedComparison }) => {
               <div className="flex flex-col items-center justify-center">
                 <div className="flex items-center h-48 w-60 bg-gray-200 rounded">
                   <p className="text-center">
-                    Pilih 1 negara untuk dibandingkan
+                    Choose one country for comparison
                   </p>
                 </div>
               </div>
@@ -50,12 +48,12 @@ const MainComparison = ({ selectedComparison }) => {
           <>
             <div className="flex flex-col items-center justify-center">
               <div className="flex items-center h-48 w-60 bg-gray-200 rounded">
-                <p className="text-center">Pilih 1 negara untuk dibandingkan</p>
+                <p className="text-center">Choose one country for comparison</p>
               </div>
             </div>
             <div className="flex flex-col items-center justify-center">
               <div className="flex items-center h-48 w-60 bg-gray-200 rounded">
-                <p className="text-center">Pilih 1 negara untuk dibandingkan</p>
+                <p className="text-center">Choose one country for comparison</p>
               </div>
             </div>
           </>
