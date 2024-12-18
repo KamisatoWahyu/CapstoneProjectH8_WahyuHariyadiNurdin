@@ -7,17 +7,13 @@ import { fetchNews } from "../store/actions/actionFetchAPI";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 
-let renderCount = 0;
 const Article = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("dispatch fetch news");
     dispatch(fetchNews());
   }, []);
 
-  renderCount++;
-  console.log("Render count article: ,", renderCount);
   return (
     <>
       <main
