@@ -43,21 +43,24 @@ const CountryComparison = () => {
         )
         .filter((result) => result !== undefined);
 
-      if (selectedOption.length == 0) {
-        setSelectedOption(realValue);
-      } else if (
-        realValue[0].value !== selectedOption[0].value &&
-        realValue[1].value !== selectedOption[1].value
-      ) {
-        setSelectedOption(realValue);
-      }
+        setSelectedOption((prevSelectedOption) => {
+          if (prevSelectedOption.length === 0) {
+            return realValue;
+          } else if (
+            realValue[0].value !== prevSelectedOption[0]?.value &&
+            realValue[1].value !== prevSelectedOption[1]?.value
+          ) {
+            return realValue;
+          }
+          return prevSelectedOption;
+        });
     } else if (countryReducer.optionValueCountry.length !== 0) {
       setSelectedOption([
         { value: "ID", label: "Indonesia" },
         { value: "SG", label: "Singapore" },
       ]);
     }
-  }, [param, countryReducer.optionValueCountry, selectedOption]);
+  }, [param, countryReducer.optionValueCountry]);
 
   // Untuk mencari data perbandingan sesuai dengan kode negara
   useEffect(() => {

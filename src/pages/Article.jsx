@@ -4,16 +4,21 @@ import SubArticle from "../components/SubArticle";
 import earth from "../assets/planet-earth-background.jpg";
 import { fetchNews } from "../store/actions/actionFetchAPI";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
 const Article = () => {
+  const newsReducer = useSelector((state) => {
+    return state.newsReducer;
+  });
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
-    dispatch(fetchNews());
-  }, []);
-
+    if(newsReducer.mainNews.length == 0){
+      console.log("hello")
+      dispatch(fetchNews());
+    }
+  }, [dispatch]);
   return (
     <>
       <main
