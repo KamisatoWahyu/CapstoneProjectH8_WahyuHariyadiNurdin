@@ -9,12 +9,13 @@ const SubArticle = () => {
   const handleLink = (link) => {
     window.open(link, '_blank')
   }
+
   return (
     <>
       {newsReducer.mainNews.length !== 0 ? (
         <section className="flex flex-col items-center">
           <div className="mt-6 mb-4 md:w-5/6 px-4 grid grid-cols-3 md:grid-cols-5 gap-2">
-            {newsReducer.mainNews.map((item, index) => (
+            {newsReducer.mainNews.response.docs.map((item, index) => (
               <div
                 className="p-4 h-auto col-span-1 rounded shadow-lg cursor-pointer duration-500 backdrop-blur-sm bg-black/30 hover:scale-105 hover:bg-black/50" onClick={() => handleLink(item.web_url)}
                 key={index}
@@ -38,7 +39,6 @@ const SubArticle = () => {
               </div>
             ))}
           </div>
-          <button className="px-3 py-1 text-white font-medium bg-blue-600 rounded shadow duration-300 hover:scale-105">More..</button>
         </section>
       ) : (
         <section className="flex flex-col items-center justify-center">

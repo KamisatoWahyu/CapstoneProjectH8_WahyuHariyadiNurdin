@@ -37,21 +37,17 @@ export function fetchCountry() {
 export function fetchNews() {
   return async function (dispatch) {
     try {
-      const fetchNews = [];
-    
-      for (let i = 0; i < 1; i++) {
+        const random = Math.floor(Math.random() * 5);
         const response = await fetch(
-          `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=peace&page=${i}&api-key=${
+          `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=peace&page=${random}&api-key=${
             import.meta.env.VITE_REACT_NEWS_API_KEY
           }`
         );
         const responseJSON = await response.json();
-        fetchNews.push(...responseJSON.response.docs); 
-      }
 
       dispatch({
         type: NEWS_REDUCER_CASE.INSERT_ALL_NEWS,
-        mainNews: fetchNews,
+        mainNews: responseJSON,
       });
     } catch (error) {
       console.log("Error fetching: ", error);

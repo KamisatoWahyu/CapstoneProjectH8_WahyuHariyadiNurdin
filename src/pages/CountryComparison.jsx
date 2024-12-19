@@ -57,7 +57,7 @@ const CountryComparison = () => {
         { value: "SG", label: "Singapore" },
       ]);
     }
-  }, [param, countryReducer.optionValueCountry]);
+  }, [param, countryReducer.optionValueCountry, selectedOption]);
 
   // Untuk mencari data perbandingan sesuai dengan kode negara
   useEffect(() => {
