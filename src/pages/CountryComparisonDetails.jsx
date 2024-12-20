@@ -24,7 +24,7 @@ const CountryComparisonDetails = () => {
     <>
       {countryReducer.countryComparisonData.length == 2 &&
       countryReducer.renderStatus ? (
-        <div className="p-4 text-white w-4/6 backdrop-blur-sm bg-black/30 rounded shadow-lg">
+        <div className="p-4 text-white text-sm md:text-lg w-4/6 backdrop-blur-sm bg-black/30 rounded shadow-lg">
           <table width="100%">
             <thead>
               <tr className="font-bold border-b">

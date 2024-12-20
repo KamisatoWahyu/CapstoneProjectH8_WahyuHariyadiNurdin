@@ -36,7 +36,7 @@ const MainComparison = ({ selectedComparison }) => {
             ))}
             {countryReducer.countryComparisonData.length < 2 && (
               <div className="flex flex-col items-center justify-center">
-                <div className="flex justify-center items-center h-48 w-60 bg-gray-200 rounded">
+                <div className="flex justify-center items-center h-36 w-40 md:h-48 md:w-60 bg-gray-200 rounded">
                   <p className="text-center">
                   Select one country to compare.
                   </p>
@@ -47,12 +47,12 @@ const MainComparison = ({ selectedComparison }) => {
         ) : (
           <>
             <div className="flex flex-col items-center justify-center">
-              <div className="flex justify-center items-center h-48 w-60 bg-gray-200 rounded">
+              <div className="flex justify-center items-center h-36 w-40 md:h-48 md:w-60 bg-gray-200 rounded">
                 <p>Select one country to compare</p>
               </div>
             </div>
             <div className="flex flex-col items-center justify-center">
-              <div className="flex justify-center items-center h-48 w-60 bg-gray-200 rounded">
+              <div className="flex justify-center items-center h-36 w-40 md:h-48 md:w-60 bg-gray-200 rounded">
                 <p className="text-center">Select one country to compare</p>
               </div>
             </div>
