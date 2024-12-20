@@ -1,0 +1,25 @@
+{
+    "routes": [
+      {
+        "src": "/",
+        "dest": "/pages/Dashboard.jsx"
+      },
+      {
+        "src": "/country-comparison",
+        "dest": "/pages/CountryComparison.jsx"
+      },
+      {
+        "src": "/article",
+        "dest": "/pages/Article.jss"
+      },
+      {
+        "src": "/country-comparison/compare/:country1/n/:country2",
+        "dest": "/pages/CountryCompraisonDetails.js"
+      },
+      {
+        "src": "/error",
+        "dest": "/pages/ErrorPage.jsx"
+      }
+    ]
+  }
+  
