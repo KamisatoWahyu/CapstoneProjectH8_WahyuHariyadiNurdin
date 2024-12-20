@@ -6,7 +6,7 @@ export function fetchCountry() {
       const response = await fetch(`https://restcountries.com/v3.1/all`);
       const responseJSON = await response.json();
 
-      //Membuat top country
+      // Untuk membuat urutan negara berdaarkan populasi
       const sortedCountries = responseJSON.sort(
         (a, b) => b.population - a.population
       );
@@ -15,7 +15,7 @@ export function fetchCountry() {
         rankNumber: index + 1
       }));
 
-      // Membuat option value
+      // Untuk membuat option value
       const optionValueCountry = responseJSON.map((item) => ({
         value: item.cca2,
         label: item.name.common,

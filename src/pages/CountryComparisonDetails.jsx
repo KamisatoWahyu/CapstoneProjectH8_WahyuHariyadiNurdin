@@ -5,6 +5,7 @@ const CountryComparisonDetails = () => {
     return state.countryReducer;
   });
 
+  // Key untuk map data comparison
   const keys = [
     "Capital",
     "Region",

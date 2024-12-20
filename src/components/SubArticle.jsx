@@ -6,6 +6,7 @@ const SubArticle = () => {
     return state.newsReducer;
   });
 
+  // Untuk menghandle ketika card diklik, diarahkan ke link yang sesuai dengan cardnya
   const handleLink = (link) => {
     window.open(link, "_blank");
   };

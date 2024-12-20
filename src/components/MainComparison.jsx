@@ -8,6 +8,7 @@ const MainComparison = ({ selectedComparison }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // Untuk menavigasi halaman ke tujuannya (child)
   const handleNavigate = () => {
     navigate(
       `compare/${selectedComparison[0].value}/n/${selectedComparison[1].value}`

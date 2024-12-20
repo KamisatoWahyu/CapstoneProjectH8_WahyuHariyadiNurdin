@@ -9,6 +9,7 @@ const MainDashboard = () => {
     return state.countryReducer;
   });
 
+  // Untuk mengubah angka menjadi lebih sederhana (300.000.000 -> 300M)
   function formatNumber(str) {
     const num = parseInt(str, 10);
     return new Intl.NumberFormat("en", {
@@ -17,6 +18,7 @@ const MainDashboard = () => {
     }).format(num);
   }
 
+  // Untuk menghandle perubahan select form
   const handleChange = (selectedOption) => {
     setSelectedOption(selectedOption);
 

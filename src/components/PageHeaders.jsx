@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 const PageHeaders = ({ title, subtitle, children}) => {
-
+  // Untuk menghandle perubahan class pada navLink
   const isNavlinkActive = (isActive) => {
     return isActive ? "font-bold underline-offset-8" : "text-gray-500";
   };

@@ -26,7 +26,7 @@ const CountryComparison = () => {
     }
   }, [dispatch, countryReducer.mainCountry]);
 
-  //useEffect untuk selected param
+  // useEffect untuk selected param
   useEffect(() => {
     if (
       Object.keys(param).length !== 0 &&

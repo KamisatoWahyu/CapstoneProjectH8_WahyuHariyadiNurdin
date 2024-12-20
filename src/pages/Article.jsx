@@ -13,6 +13,7 @@ const Article = () => {
   });
   const dispatch = useDispatch();
   
+  // Untuk fetch data news
   useEffect(() => {
     if(newsReducer.mainNews.length == 0){
       dispatch(fetchNews());

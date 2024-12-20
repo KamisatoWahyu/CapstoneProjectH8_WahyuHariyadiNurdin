@@ -14,6 +14,7 @@ const Dashboard = () => {
   });
   const dispatch = useDispatch();
 
+  // Untuk fetch data country
   useEffect(() => {
     if (countryReducer.mainCountry.length == 0) {
       dispatch(fetchCountry());
