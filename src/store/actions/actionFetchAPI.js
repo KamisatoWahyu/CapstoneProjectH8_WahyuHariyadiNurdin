@@ -37,7 +37,7 @@ export function fetchCountry() {
 export function fetchNews() {
   return async function (dispatch) {
     try {
-        const random = Math.floor(Math.random() * 5);
+        const random = Math.floor(Math.random() * 10);
         const response = await fetch(
           `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=peace&page=${random}&api-key=${
             import.meta.env.VITE_REACT_NEWS_API_KEY
