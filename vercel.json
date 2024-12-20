@@ -3,23 +3,23 @@
     "rewrites": [
       {
         "source": "/",
-        "destination": "/pages/Dashboard.jsx"
+        "destination": "/"
       },
       {
         "source": "/country-comparison",
-        "destination": "/pages/CountryComparison.jsx"
+        "destination": "/"
       },
       {
         "source": "/article",
-        "destination": "/pages/Article.jss"
+        "destination": "/"
       },
       {
         "source": "/country-comparison/compare/:country1/n/:country2",
-        "destination": "/pages/CountryCompraisonDetails.js"
+        "destination": "/"
       },
       {
         "source": "/error",
-        "destination": "/pages/ErrorPage.jsx"
+        "destination": "/"
       }
     ]
   }
