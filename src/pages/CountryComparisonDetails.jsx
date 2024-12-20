@@ -5,63 +5,32 @@ const CountryComparisonDetails = () => {
     return state.countryReducer;
   });
 
-  function formatNumber(str) {
-    const num = parseInt(str, 10);
-    return new Intl.NumberFormat("en", {
-      notation: "compact",
-      compactDisplay: "short",
-    }).format(num);
-  }
-
-  function formatArea(str){
-    const num = parseInt(str, 10);
-    return new Intl.NumberFormat("en").format(num);
-  }
-
-
-  const comparedData = countryReducer.countryComparisonData.map((country) => {
-    const currencyName = country.currencies
-      ? Object.entries(country.currencies)[0]?.[1]
-      : null;
-  
-    return {
-      name: country.name.common,
-      code: country.cca2,
-      capital: country.capital?.[0],
-      region: country.region,
-      subregion: country.subregion,
-      area: country.area,
-      population: country.population,
-      continents: country.continents[0],
-      startOfWeek: country.startOfWeek,
-      currencyName: currencyName.name,
-      currencySymbol: currencyName.symbol
-
-    };
-  });
-
   const keys = [
     "Capital",
     "Region",
     "Sub Region",
     "Population",
     "Area",
+    "Language",
+    "Timezone",
     "Currency",
     "Currency Symbol",
+    "Car Side",
+    "Car Sign",
     "Start of Week",
   ];
 
   return (
     <>
       {countryReducer.countryComparisonData.length == 2 &&
-    countryReducer.renderStatus ? (
+      countryReducer.renderStatus ? (
         <div className="p-4 text-white w-4/6 backdrop-blur-sm bg-black/30 rounded shadow-lg">
-          <table width="100%" className="">
+          <table width="100%">
             <thead>
-              <tr className="font-bold">
-                <td>Attribute</td>
-                {comparedData.map((item, key) => (
-                  <td key={key} className="text-right">
+              <tr className="font-bold border-b">
+                <td className="w-2/4">Attribute</td>
+                {countryReducer.comparedData.map((item, key) => (
+                  <td key={key} className="text-right w-1/">
                     {item.name}
                   </td>
                 ))}
@@ -69,27 +38,38 @@ const CountryComparisonDetails = () => {
             </thead>
             <tbody>
               {keys.map((attribute, key) => (
-                <tr key={key}>
-                  <td>{attribute}</td>
-                  {comparedData.map((item, index) => (
-                    <td key={index} className="text-right">
+                <tr
+                  key={key}
+                  className="border-b border-slate-400 text-white/80"
+                >
+                  <td className="p-2">{attribute}</td>
+                  {countryReducer.comparedData.map((item, index) => (
+                    <td key={index} className="text-right p-1">
                       {attribute === "Capital"
-                        ? item.name
+                        ? item.capital
                         : attribute === "Region"
                         ? item.region
                         : attribute === "Sub Region"
                         ? item.subregion
                         : attribute === "Population"
-                        ? formatNumber(item.population)
+                        ? item.population
                         : attribute === "Area"
-                        ? `${formatArea(item.area)} km\u00B2`
-                        : attribute === "Currency" 
+                        ? `${item.area} km\u00B2`
+                        : attribute === "Language"
+                        ? item.language
+                        : attribute === "Timezone"
+                        ? item.timezone
+                        : attribute === "Currency"
                         ? item.currencyName
                         : attribute === "Currency Symbol"
                         ? item.currencySymbol
+                        : attribute === "Car Side"
+                        ? item.carSide
+                        : attribute === "Car Sign"
+                        ? item.carSign
                         : attribute === "Start of Week"
                         ? item.startOfWeek
-                        : "Null"}
+                        : "-"}
                     </td>
                   ))}
                 </tr>
@@ -99,7 +79,7 @@ const CountryComparisonDetails = () => {
         </div>
       ) : (
         <section className="flex flex-col items-center justify-center">
-          <span className="text-white">Please choose 2 countries first</span>
+          <span className="text-white">First, pick 2 countries to compare.</span>
         </section>
       )}
     </>

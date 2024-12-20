@@ -28,8 +28,8 @@ const Dashboard = () => {
       >
         {/* Header */}
         <PageHeaders
-          title="WORLD"
-          subtitle="We are human, not still water"
+          title="Country Rank Population"
+          subtitle="Find out which country has the most people."
         />
 
         {/* Main Menu */}

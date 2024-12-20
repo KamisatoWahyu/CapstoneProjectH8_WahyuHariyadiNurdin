@@ -67,8 +67,7 @@ const CountryComparison = () => {
     if (countryReducer.mainCountry.length !== 0) {
       dispatch(
         countryData(
-          { selectedOption, mainCountry: countryReducer.mainCountry },
-          "INSERT_COUNTRY_COMPARISON_DATA"
+          { selectedOption, mainCountry: countryReducer.mainCountry }
         )
       );
     }
@@ -87,7 +86,7 @@ const CountryComparison = () => {
       {/* Header */}
       <PageHeaders
         title="Country Comparison"
-        subtitle="Choose 2 countries do you want to compare"
+        subtitle="Choose 2 countries you want to compare."
       >
         <Select
           closeMenuOnSelect={false}

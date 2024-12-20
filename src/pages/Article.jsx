@@ -15,10 +15,9 @@ const Article = () => {
   
   useEffect(() => {
     if(newsReducer.mainNews.length == 0){
-      console.log("hello")
       dispatch(fetchNews());
     }
-  }, [dispatch]);
+  }, [dispatch, newsReducer]);
   return (
     <>
       <main
@@ -26,7 +25,7 @@ const Article = () => {
         style={{ backgroundImage: `url(${earth})` }}
       >
         {/* Header */}
-        <PageHeaders title="Article" subtitle="What happened?" />
+        <PageHeaders title="Article" subtitle="Explore ideas and facts that shape our world."/>
 
         {/* SubArticle */}
         <SubArticle />

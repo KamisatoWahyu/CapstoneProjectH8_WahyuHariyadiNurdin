@@ -38,7 +38,7 @@ const MainComparison = ({ selectedComparison }) => {
               <div className="flex flex-col items-center justify-center">
                 <div className="flex items-center h-48 w-60 bg-gray-200 rounded">
                   <p className="text-center">
-                    Choose one country for comparison
+                  Select one country to compare.
                   </p>
                 </div>
               </div>
@@ -48,12 +48,12 @@ const MainComparison = ({ selectedComparison }) => {
           <>
             <div className="flex flex-col items-center justify-center">
               <div className="flex items-center h-48 w-60 bg-gray-200 rounded">
-                <p className="text-center">Choose one country for comparison</p>
+                <p className="text-center">Select one country to compare.</p>
               </div>
             </div>
             <div className="flex flex-col items-center justify-center">
               <div className="flex items-center h-48 w-60 bg-gray-200 rounded">
-                <p className="text-center">Choose one country for comparison</p>
+                <p className="text-center">Select one country to compare.</p>
               </div>
             </div>
           </>
@@ -69,7 +69,7 @@ const MainComparison = ({ selectedComparison }) => {
         onClick={handleNavigate}
       >
         {countryReducer.countryComparisonData.length !== 2
-          ? "Choose 2 countries first"
+          ? "Select 2 countries first."
           : "Compare"}
       </button>
     </>

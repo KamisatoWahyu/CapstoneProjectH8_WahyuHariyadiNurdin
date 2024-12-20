@@ -15,7 +15,8 @@ const countryState = {
   mainCountry: [], // Untuk menyimpan seluruh data hasil fetch country
   topPopulation: [], // Untuk menyimpan data top 10 population
   selectedCountry: [], // Untuk menyimpan country yang dipilih
-  countryComparisonData: [], // Untuk menyimpan data country comparison yang dipilih
+  countryComparisonData: [], // Untuk menyimpan data mentah country comparison yang dipilih
+  comparedData: [], // Untuk menyimpan data perbandingan yang sudah diolah
   optionValueCountry: [], // Untuk menyimpan seluruh data (value, label) untuk option select
   renderStatus: false
 };
@@ -44,6 +45,7 @@ const countryReducer = (state = countryState, action) => {
       return {
         ...state,
         countryComparisonData: action.countryComparisonData,
+        comparedData: action.comparedData,
         renderStatus: action.renderStatus
       }
     }

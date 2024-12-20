@@ -45,7 +45,6 @@ const MainDashboard = () => {
               placeholder="What is your country's rank?"
             />
           )}
-          <p className="mt-4 font-bold text-white">Country population rank</p>
           <hr className="mt-4 w-3/4" />
           <div className="w-full mt-4 grid grid-cols-3 md:grid-cols-5 gap-2 p-4">
             {/* Country Ranking Card */}
