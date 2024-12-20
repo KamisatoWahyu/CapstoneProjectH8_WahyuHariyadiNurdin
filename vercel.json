@@ -1,26 +1,29 @@
 {
-    "cleanUrls": true,
-    "rewrites": [
-      {
-        "source": "/",
-        "destination": "/"
-      },
-      {
-        "source": "/country-comparison",
-        "destination": "/"
-      },
-      {
-        "source": "/article",
-        "destination": "/"
-      },
-      {
-        "source": "/country-comparison/compare/:country1/n/:country2",
-        "destination": "/"
-      },
-      {
-        "source": "/error",
-        "destination": "/"
-      }
-    ]
-  }
-  
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/"
+    },
+    {
+      "source": "/country-comparison",
+      "destination": "/"
+    },
+    {
+      "source": "/article",
+      "destination": "/"
+    },
+    {
+      "source": "/country-comparison/compare/:country1/n/:country2",
+      "destination": "/"
+    },
+    {
+      "source": "/error",
+      "destination": "/"
+    },
+    { 
+      "src": "/(.*)", 
+      "status": 404, 
+      "dest": "/pages/ErrorPage.jsx" }
+  ]
+}
