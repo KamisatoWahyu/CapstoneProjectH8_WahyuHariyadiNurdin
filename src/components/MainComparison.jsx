@@ -30,7 +30,7 @@ const MainComparison = ({ selectedComparison }) => {
                 <img
                   src={item ? item.flags.png : ""}
                   alt={item ? `Flag of ${item.name.common}` : "Loading..."}
-                  className="mt-2 object-contain w-40 md:w-60 shadow-lg"
+                  className="mt-2 object-contain h-20 md:h-40 shadow-lg"
                 />
               </div>
             ))}
