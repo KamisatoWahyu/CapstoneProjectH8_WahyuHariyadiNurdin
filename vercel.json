@@ -22,8 +22,7 @@
       "destination": "/"
     },
     { 
-      "src": "/(.*)", 
-      "status": 404, 
-      "dest": "/pages/ErrorPage.jsx" }
+      "source": "/(.*)", 
+      "destination": "/pages/ErrorPage.jsx" }
   ]
 }
