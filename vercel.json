@@ -20,9 +20,6 @@
     {
       "source": "/error",
       "destination": "/"
-    },
-    { 
-      "source": "/(.*)", 
-      "destination": "/pages/ErrorPage.jsx" }
+    }
   ]
 }
