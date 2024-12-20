@@ -1,7 +1,7 @@
 # CAPSTONE PROJECT H8
 Tema: Country Rank Population
 
-Link vercel: [Disini](https://capstone-project-h8-wahyu-hariyadi-nurdin.vercel.app/){:target="_blank" rel="noopener"}
+Link vercel: [Disini](https://capstone-project-h8-wahyu-hariyadi-nurdin.vercel.app/)
 
 Terima kasih kepada semuanya, tim Hacktiv8 (instructor, mentor, dan tim Hactiv8), kedua orang tua, dan teman-teman sekalian. <br />
 Untuk Kak Airell, terima kasih banyak ya, kak.. Sebenarnya saya mau nanya saat kelas mentoring,
