@@ -1,24 +1,24 @@
 {
-    "routes": [
+    "rewrites": [
       {
-        "src": "/",
-        "dest": "/pages/Dashboard.jsx"
+        "source": "/",
+        "destination": "/pages/Dashboard.jsx"
       },
       {
-        "src": "/country-comparison",
-        "dest": "/pages/CountryComparison.jsx"
+        "source": "/country-comparison",
+        "destination": "/pages/CountryComparison.jsx"
       },
       {
-        "src": "/article",
-        "dest": "/pages/Article.jss"
+        "source": "/article",
+        "destination": "/pages/Article.jss"
       },
       {
-        "src": "/country-comparison/compare/:country1/n/:country2",
-        "dest": "/pages/CountryCompraisonDetails.js"
+        "source": "/country-comparison/compare/:country1/n/:country2",
+        "destination": "/pages/CountryCompraisonDetails.js"
       },
       {
-        "src": "/error",
-        "dest": "/pages/ErrorPage.jsx"
+        "source": "/error",
+        "destination": "/pages/ErrorPage.jsx"
       }
     ]
   }
